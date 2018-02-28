@@ -48,31 +48,3 @@ let g:sql_type_default = 'mysql'
   filetype plugin indent on
   syntax enable
 
-  " Plugins_install
-  if dein#check_install()
-    call dein#install()
-  endif
-"}}}
-
-"BasicSettings {{{
-    " + VisualSettings {{{
-        colorscheme evening 
-        set number
-        set ruler
-        set nowrap
-    " }}}
-    " + SearchSettings {{{
-        set hlsearch
-        set ignorecase
-        set smartcase
-    " }}}
-    " + IndentSettings {{{
-        set autoindent
-        set shiftwidth=4
-        set expandtab
-        set tabstop=4
-        set softtabstop=4
-        set smarttab
-    " }}}
-" }}}
-
