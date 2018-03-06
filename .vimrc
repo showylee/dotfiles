@@ -1,4 +1,5 @@
-"ƒ}[ƒJ[Ü‚èô‚İ‹@”\‚Ìİ’è
+set encoding=utf-8
+"ãƒãƒ¼ã‚«ãƒ¼æŠ˜ã‚Šç•³ã¿æ©Ÿèƒ½ã®è¨­å®š
 au Filetype vim setlocal foldmethod=marker
 " $VIMRUNTIME/syntax/php.vim
 let g:php_baselib = 1
@@ -10,21 +11,21 @@ let g:php_sql_query = 1
 let g:sql_type_default = 'mysql'
 
 "dein.vim_config{{{
-  "ƒpƒXİ’è
+  "ãƒ‘ã‚¹è¨­å®š
   let s:dein_dir = fnamemodify('~/.vim/dein/',':p')
   let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim'
 
-  "dein.vim‚ª‚È‚¯‚ê‚ÎƒCƒ“ƒXƒg[ƒ‹
+  "dein.vimãŒãªã‘ã‚Œã°ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
   if !isdirectory(s:dein_repo_dir)
       execute '!git clone https://github.com/Shougo/dein.vim' shellescape(s:dein_repo_dir)
   endif
 
-  "dein.vim‚ğƒ‰ƒ“ƒ^ƒCƒ€ƒpƒX‚É’Ç‰Á
+  "dein.vimã‚’ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãƒ‘ã‚¹ã«è¿½åŠ 
   if &runtimepath !~# '/dein.vim'
       execute 'set runtimepath^=' . s:dein_repo_dir
   endif
 
-  "dein‚Ìfunction‚ğŒÄ‚Ño‚µ
+  "deinã®functionã‚’å‘¼ã³å‡ºã—
   call dein#begin(s:dein_dir)
   call dein#add('Shougo/neocomplcache')
 
@@ -32,7 +33,7 @@ let g:sql_type_default = 'mysql'
   "+ clorscheme
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('tomasr/molokai')
-  "+ ƒXƒjƒyƒbƒg
+  "+ ã‚¹ãƒ‹ãƒšãƒƒãƒˆ
   call dein#add('Shougo/neosnippet')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('honza/vim-snippets')
@@ -59,10 +60,10 @@ let g:sql_type_default = 'mysql'
   " }}}
   "json-plugin
   call dein#add('elzr/vim-json')
-  "indent‰Â‹‰»
+  "indentå¯è¦–åŒ–
   call dein#add('Yggdroot/indentLine')
 
-  " •K{
+  " å¿…é ˆ
   call dein#end()
   filetype plugin indent on
   syntax enable
@@ -108,5 +109,5 @@ let g:sql_type_default = 'mysql'
         set smarttab
     " }}}
 " }}}
-"NERDTree©“®‹N“®İ’è
+"NERDTreeè‡ªå‹•èµ·å‹•è¨­å®š
 "autocmd VimEnter * execute 'NERDTree'
