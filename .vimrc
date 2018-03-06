@@ -1,3 +1,5 @@
+"マーカー折り畳み機能の設定
+au Filetype vim setlocal foldmethod=marker
 " $VIMRUNTIME/syntax/php.vim
 let g:php_baselib = 1
 let g:php_htmlInStrings = 1
@@ -34,6 +36,12 @@ let g:sql_type_default = 'mysql'
   call dein#add('Shougo/neosnippet')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('honza/vim-snippets')
+  "dictionary
+  call dein#add('Shougo/vimproc.vim',{'build': 'make'})
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('thinca/vim-ref')
+  call dein#add('vim-scripts/taglist.vim')
+  call dein#add('w0rp/ale')
   "+ HTML/CSS
   "call dein#add('amirh/HTML-AutoCloseTag')
   call dein#add('hail2u/vim-css3-syntax')
@@ -46,6 +54,13 @@ let g:sql_type_default = 'mysql'
   call dein#add('scrooloose/nerdtree')
   "}}}
   call dein#add('Shougo/unite.vim')
+  "+ git-plugin{{{
+  call dein#add('tpope/vim-fugitive')
+  " }}}
+  "json-plugin
+  call dein#add('elzr/vim-json')
+  "indent可視化
+  call dein#add('Yggdroot/indentLine')
 
   " 必須
   call dein#end()
@@ -57,6 +72,19 @@ let g:sql_type_default = 'mysql'
     call dein#install()
   endif
 "}}}
+
+ "vim-ref {{{
+ inoremap <silent><C-k> <C-o>:call<Space>ref#K('normal')<CR><ESC>
+ nmap <silent>K <Plug>(ref-keyword)
+ let g:ref_no_default_key_mappings = 1
+ let g:ref_cache_dir               = $HOME . '/.vim/vim-ref/cache'
+ let g:ref_detect_filetype         = {
+\    'php': 'phpmanual'
+\} 
+ let g:ref_phpmanual_path = $HOME . '/.vim/vim-ref/php-chunked-xhtml'
+ let g:ref_use_cache      = 1
+ let g:ref_use_vimproc    = 1 
+ "}}}
 
 "BasicSettings {{{
     " + VisualSettings {{{
