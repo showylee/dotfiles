@@ -2,6 +2,8 @@ set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
 
+let g:vimproc#download_wimdows_dll = 1
+
 "マーカー折り畳み機能の設定
 au Filetype vim setlocal foldmethod=marker
 " $VIMRUNTIME/syntax/php.vim
@@ -41,7 +43,9 @@ let g:sql_type_default = 'mysql'
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('honza/vim-snippets')
   "dictionary
-  call dein#add('Shougo/vimproc.vim',{'build': 'make'})
+  call dein#add('Shougo/vimproc.vim',{'build': {
+              \                   'windows' : 'tools\\update-dll-mingw',
+              \                   'unix' : 'make -f make_unix.mak'},})
   call dein#add('thinca/vim-quickrun')
   call dein#add('thinca/vim-ref')
   call dein#add('vim-scripts/taglist.vim')
@@ -86,13 +90,14 @@ let g:sql_type_default = 'mysql'
 \    'php': 'phpmanual'
 \} 
  let g:ref_phpmanual_path = $HOME . '/.vim/vim-ref/php-chunked-xhtml'
+ let g:ref_phpmanual_cmd = 'lynx -dump %s'
  let g:ref_use_cache      = 1
  let g:ref_use_vimproc    = 1 
  "}}}
 
 "BasicSettings {{{
     " + VisualSettings {{{
-        colorscheme solarized
+        colorscheme molokai
         set background=dark
         set number
         set ruler
@@ -112,5 +117,6 @@ let g:sql_type_default = 'mysql'
         set smarttab
     " }}}
 " }}}
+
 "NERDTree自動起動設定
 "autocmd VimEnter * execute 'NERDTree'
