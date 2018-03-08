@@ -1,0 +1,56 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]] #snippet
+repo = 'Shougo/neosnippet'
+
+[[plugins]] 
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo =  'honza/vim-snippets'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]] #manual閲覧
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'vim-scripts/taglist.vim'
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'tomasr/molokai'
