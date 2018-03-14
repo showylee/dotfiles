@@ -1,4 +1,10 @@
-"ƒ}[ƒJ[Ü‚èô‚İ‹@”\‚Ìİ’è
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
+let g:vimproc#download_wimdows_dll = 1
+
+"ãƒãƒ¼ã‚«ãƒ¼æŠ˜ã‚Šç•³ã¿æ©Ÿèƒ½ã®è¨­å®š
 au Filetype vim setlocal foldmethod=marker
 " $VIMRUNTIME/syntax/php.vim
 let g:php_baselib = 1
@@ -10,54 +16,29 @@ let g:php_sql_query = 1
 let g:sql_type_default = 'mysql'
 
 "dein.vim_config{{{
-  "ƒpƒXİ’è
+  "ãƒ‘ã‚¹è¨­å®š
   let s:dein_dir = fnamemodify('~/.vim/dein/',':p')
   let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim'
 
-  "dein.vim‚ª‚È‚¯‚ê‚ÎƒCƒ“ƒXƒg[ƒ‹
+  "dein.vimãŒãªã‘ã‚Œã°ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
   if !isdirectory(s:dein_repo_dir)
       execute '!git clone https://github.com/Shougo/dein.vim' shellescape(s:dein_repo_dir)
   endif
 
-  "dein.vim‚ğƒ‰ƒ“ƒ^ƒCƒ€ƒpƒX‚É’Ç‰Á
+  "dein.vimã‚’ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãƒ‘ã‚¹ã«è¿½åŠ 
   if &runtimepath !~# '/dein.vim'
       execute 'set runtimepath^=' . s:dein_repo_dir
   endif
 
-  "dein‚Ìfunction‚ğŒÄ‚Ño‚µ
-  call dein#begin(s:dein_dir)
-  call dein#add('Shougo/neocomplcache')
+  "deinã®functionã‚’å‘¼ã³å‡ºã—
+  let s:toml_file = fnamemodify(expand('<sfile>'), ':h'). '/dotfiles/dein.toml'
+  if dein#load_state(s:dein_dir)
+  	call dein#begin(s:dein_dir)
+  	call dein#load_toml(s:toml_file)
+  	call dein#end()
+  	call dein#save_state()
+  endif
 
-  "Plugins{{{
-  "+ clorscheme
-  call dein#add('altercation/vim-colors-solarized')
-  call dein#add('tomasr/molokai')
-  "+ ƒXƒjƒyƒbƒg
-  call dein#add('Shougo/neosnippet')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('honza/vim-snippets')
-  "+ HTML/CSS
-  "call dein#add('amirh/HTML-AutoCloseTag')
-  call dein#add('hail2u/vim-css3-syntax')
-  call dein#add('gorodinskiy/vim-coloresque')
-  call dein#add('mattn/emmet-vim')
-  call dein#add('tpope/vim-surround')
-  call dein#add('othree/yajs.vim')
-  "}}}
-  "+ FileTree{{{
-  call dein#add('scrooloose/nerdtree')
-  "}}}
-  call dein#add('Shougo/unite.vim')
-  "+ git-plugin{{{
-  call dein#add('tpope/vim-fugitive')
-  " }}}
-  "json-plugin
-  call dein#add('elzr/vim-json')
-  "indent‰Â‹‰»
-  call dein#add('Yggdroot/indentLine')
-
-  " •K{
-  call dein#end()
   filetype plugin indent on
   syntax enable
 
@@ -76,13 +57,14 @@ let g:sql_type_default = 'mysql'
 \    'php': 'phpmanual'
 \} 
  let g:ref_phpmanual_path = $HOME . '/.vim/vim-ref/php-chunked-xhtml'
+ let g:ref_phpmanual_cmd = 'lynx -dump %s'
  let g:ref_use_cache      = 1
  let g:ref_use_vimproc    = 1 
  "}}}
 
 "BasicSettings {{{
     " + VisualSettings {{{
-        colorscheme solarized
+        colorscheme hybrid
         set background=dark
         set number
         set ruler
@@ -102,5 +84,6 @@ let g:sql_type_default = 'mysql'
         set smarttab
     " }}}
 " }}}
-"NERDTree©“®‹N“®İ’è
+
+"NERDTreeè‡ªå‹•èµ·å‹•è¨­å®š
 "autocmd VimEnter * execute 'NERDTree'

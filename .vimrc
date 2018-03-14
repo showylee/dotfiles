@@ -64,7 +64,7 @@ let g:sql_type_default = 'mysql'
 
 "BasicSettings {{{
     " + VisualSettings {{{
-        colorscheme molokai
+        colorscheme hybrid
         set background=dark
         set number
         set ruler
@@ -86,4 +86,9 @@ let g:sql_type_default = 'mysql'
 " }}}
 
 "NERDTree自動起動設定
-"autocmd VimEnter * execute 'NERDTree'
+autocmd VimEnter * execute 'NERDTree'
+
+"universal-ctags Settings {{{
+"rootディレクトリのtagsファイルを参照する
+set tags=./tags;,tags;
+"}}}
