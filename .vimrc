@@ -4,6 +4,9 @@ set fileformats=unix,dos,mac
 
 let g:vimproc#download_wimdows_dll = 1
 
+"unfofile自動生成を無効化
+set noundofile
+
 "マーカー折り畳み機能の設定
 au Filetype vim setlocal foldmethod=marker
 " $VIMRUNTIME/syntax/php.vim
