@@ -98,3 +98,8 @@ autocmd VimEnter * execute 'NERDTree'
 "rootディレクトリのtagsファイルを参照する
 set tags=./tags;,tags;
 "}}}
+
+"neosnippets Settings {{{
+let neosnippet#enable_snipmate_compatibility = 1
+let neosnippet#snippets_directory=$HOME . '/.vim/dein/vim-snippets/snippets'
+"}}}
