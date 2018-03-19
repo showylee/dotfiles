@@ -6,6 +6,8 @@ let g:vimproc#download_wimdows_dll = 1
 
 "unfofile自動生成を無効化
 set noundofile
+set backupdir=~/.vim/temp
+set viminfo+=n~/.vim/temp
 
 "マーカー折り畳み機能の設定
 au Filetype vim setlocal foldmethod=marker
@@ -94,4 +96,9 @@ autocmd VimEnter * execute 'NERDTree'
 "universal-ctags Settings {{{
 "rootディレクトリのtagsファイルを参照する
 set tags=./tags;,tags;
+"}}}
+
+"neosnippets Settings {{{
+let neosnippet#enable_snipmate_compatibility = 1
+let neosnippet#snippets_directory = $HOME . '/.vim/dein/vim-snippets/snippets'
 "}}}

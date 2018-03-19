@@ -5,10 +5,10 @@ set fileformats=unix,dos,mac
 let g:vimproc#download_wimdows_dll = 1
 
 "unfofile自動生成を無効化
-set noundofile
-
-"サブディレクトリのファイルからもルートのtagsを読み込む
-set tags = ./tags;,tags;
+set undodir=~/.vim/temp/un
+set backupdir=~/.vim/temp/tilde
+set viminfo+=n~/.vim/temp/viminfo
+set directory=~/.vim/temp/swp
 
 "マーカー折り畳み機能の設定
 au Filetype vim setlocal foldmethod=marker
@@ -101,5 +101,5 @@ set tags=./tags;,tags;
 
 "neosnippets Settings {{{
 let neosnippet#enable_snipmate_compatibility = 1
-let neosnippet#snippets_directory=$HOME . '/.vim/dein/vim-snippets/snippets'
+let neosnippet#snippets_directory = $HOME . '/.vim/dein/vim-snippets/snippets'
 "}}}
