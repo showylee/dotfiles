@@ -57,6 +57,12 @@ let g:sql_type_default = 'mysql'
   if dein#check_install()
     call dein#install()
   endif
+
+" | uninstall
+" | 1.uncomment & open vim
+" | 2.call dein#recache_runtimepath() by vim (can't use gvim)
+" | 3.reboot vim
+"  call map(dein#check_clean(), "delete(v:val, 'rf')")
 "}}}
 
  "vim-ref {{{
