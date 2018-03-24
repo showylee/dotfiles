@@ -7,10 +7,10 @@ repo = 'Shougo/neocomplete.vim'
 [[plugins]] #snippet
 repo = 'Shougo/neosnippet'
 
-[[plugins]] 
+[[plugins]] #snippet file
 repo = 'Shougo/neosnippet-snippets'
 
-[[plugins]]
+[[plugins]] #snippet file
 repo =  'honza/vim-snippets'
 
 [[plugins]]
@@ -19,13 +19,13 @@ repo = 'thinca/vim-quickrun'
 [[plugins]] #manual閲覧
 repo = 'thinca/vim-ref'
 
-[[plugins]]
+[[plugins]] #ctags list
 repo = 'vim-scripts/taglist.vim'
 
-[[plugins]]
+[[plugins]] #asynchronous code check
 repo = 'w0rp/ale'
 
-[[plugins]]
+[[plugins]] #html5 syntax
 repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
@@ -34,25 +34,25 @@ repo = 'gorodinskiy/vim-coloresque'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
-[[plugins]]
+[[plugins]] #text object extention
 repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'othree/yajs.vim'
 
-[[plugins]]
+[[plugins]] #file tree
 repo = 'scrooloose/nerdtree'
 
-[[plugins]]
+[[plugins]] #git plugin
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'elzr/vim-json'
 
-[[plugins]]
+[[plugins]] #indent visualization
 repo = 'Yggdroot/indentLine'
 
-[[plugins]]
+[[plugins]] #clorscheme
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
