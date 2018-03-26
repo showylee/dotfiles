@@ -80,6 +80,10 @@ let g:sql_type_default = 'mysql'
  "}}}
 
 "BasicSettings {{{
+    " + Edit Settings {{{
+        "insert mode IME OFF
+        set iminsert=0
+    " }}}
     " + VisualSettings {{{
         colorscheme hybrid
         set background=dark
@@ -91,6 +95,8 @@ let g:sql_type_default = 'mysql'
         set hlsearch
         set ignorecase
         set smartcase
+        "検索モード時の自動日本語入力化をオフ
+        set imsearch=0
     " }}}
     " + IndentSettings {{{
         set autoindent
@@ -148,9 +154,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  "return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
+  return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -214,3 +220,8 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 "let g:neosnippet#snippets_directory = $HOME . '/.vim/neosnippet.vim'
 let g:neosnippet#snippets_directory = $HOME . '/.vim/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets'
 "}}}
+"emmet-vim config {{{
+"<C-y>はneocompleteとkeymappingがconfrectするため<C-t>変更
+let g:user_emmet_leader_key='<C-t>'
+"}}}
+
