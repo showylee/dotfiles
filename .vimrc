@@ -9,11 +9,21 @@ let g:vimproc#download_wimdows_dll = 1
 "    echo "bingo!"
 "endif 
 
-"unfofile自動生成を無効化
-set undodir=~/.vim/temp/un
-set backupdir=~/.vim/temp/tilde
-set viminfo+=n~/.vim/temp/viminfo
-set directory=~/.vim/temp/swp
+" windows setting {{{
+if( has('win32') || has('win64') )
+    "backup files directory (use only KaoriYa vim)
+    set undodir=~/.vim/temp/un
+    set backupdir=~/.vim/temp/tilde
+    set viminfo+=n~/.vim/temp/viminfo
+    set directory=~/.vim/temp/swp
+    "shell use msys2 設定途中
+    set shell=C:\msys64/msys2.exe  "use shell
+    set shellcmdflag=-e
+    set shellpipe=\|&\ tee
+    set shellredir=>%s\ 2>&1
+    set shellxquote=\"
+endif
+" }}}
 
 "マーカー折り畳み機能の設定
 au Filetype vim setlocal foldmethod=marker
@@ -58,9 +68,9 @@ let g:sql_type_default = 'mysql'
     call dein#install()
   endif
 
-" | uninstall
-" | 1.uncomment & open vim
-" | 2.call dein#recache_runtimepath() by vim (can't use gvim)
+" | uninstall Plugins
+" | 1.uncomment the following description & reboot vim
+" | 2.command :call dein#recache_runtimepath() by vim (can't use gvim)
 " | 3.reboot vim
 "  call map(dein#check_clean(), "delete(v:val, 'rf')")
 "}}}
@@ -114,13 +124,21 @@ autocmd VimEnter * execute 'NERDTree'
 "不可視ファイルを表示
 let NERDTreeShowHidden = 1
 "open&close
-nnoremap<silent><C-e> :NERDTreeToggle<CR>
+nnoremap<silent><C-q> :NERDTreeToggle<CR>
 "}}}
 
 "universal-ctags Settings {{{
 "rootディレクトリのtagsファイルを参照する
 set tags=./tags;,tags;
 "}}}
+
+" +taglist config {{{
+let Tlist_Use_Right_Window = 1  "diaplay on the right side
+let Tlist_Show_One_File = 1     "indicate only current file
+let Tlist_Exit_OnlyWindow = 1   "window only taglist, close vim 
+"open & close with \t
+map <silent><leader>t :TlistToggle<CR>
+" }}}
 
 "neocomplete Settings {{{
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
