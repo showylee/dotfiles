@@ -15,9 +15,11 @@ if( has('win32') || has('win64') )
     set undodir=~/.vim/temp/un
     set backupdir=~/.vim/temp/tilde
     set viminfo+=n~/.vim/temp/viminfo
-    set directory=~/.vim/temp/swp
+    set directory=~/.vim/temp
     "shell use msys2 設定途中
-    set shell=C:\msys64/msys2.exe  "use shell
+"    set shell=C:\msys64/msys2.exe  "use shell
+    set shell=cmd
+    set noshellslash
     set shellcmdflag=-e
     set shellpipe=\|&\ tee
     set shellredir=>%s\ 2>&1
