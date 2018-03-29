@@ -18,12 +18,12 @@ if( has('win32') || has('win64') )
     set directory=~/.vim/temp
     "shell use msys2 設定途中
 "    set shell=C:\msys64/msys2.exe  "use shell
-    set shell=cmd
-    set noshellslash
-    set shellcmdflag=-e
-    set shellpipe=\|&\ tee
-    set shellredir=>%s\ 2>&1
-    set shellxquote=\"
+"    set shell=cmd
+"    set noshellslash
+"    set shellcmdflag=-e
+"    set shellpipe=\|&\ tee
+"    set shellredir=>%s\ 2>&1
+"    set shellxquote=\"
 endif
 " }}}
 
@@ -121,11 +121,15 @@ let g:sql_type_default = 'mysql'
 " }}}
 
 "NERDTree Settings {{{
-"vim起動時に開く
-autocmd VimEnter * execute 'NERDTree'
-"不可視ファイルを表示
+"Allways open NERDTree, to start vim
+"autocmd VimEnter * execute 'NERDTree'
+"To start vim without specifying a file, open NERDTree
+if argc() == 0
+    let g:nerdtree_tabs_open_on_console_startup = 1
+end
+"Show invisible files
 let NERDTreeShowHidden = 1
-"open&close
+"Open & close
 nnoremap<silent><C-q> :NERDTreeToggle<CR>
 "}}}
 
@@ -134,7 +138,7 @@ nnoremap<silent><C-q> :NERDTreeToggle<CR>
 set tags=./tags;,tags;
 "}}}
 
-" +taglist config {{{
+" taglist config {{{
 let Tlist_Use_Right_Window = 1  "diaplay on the right side
 let Tlist_Show_One_File = 1     "indicate only current file
 let Tlist_Exit_OnlyWindow = 1   "window only taglist, close vim 
@@ -215,6 +219,19 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "}}}
 
+" lexima.vim config {{{
+let g:lexima_no_default_rules = 1
+call lexima#set_default_rules()
+call lexima#insmode#map_hook('before', '<CR>', '')
+
+function! s:my_cr_function() abort
+    "neocomplete#smart_close_popup() . 
+    return lexima#expand("<CR>", 'i')
+endfunction
+
+inoremap <expr><CR> <SID>my_cr_function()
+"}}}
+
 "neosnippets Settings {{{
 " Plugin key-mappongs.
 " Note: It must be "imap" and "smap". It uses <Plug> mappings.
@@ -240,8 +257,10 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 "let g:neosnippet#snippets_directory = $HOME . '/.vim/neosnippet.vim'
 let g:neosnippet#snippets_directory = $HOME . '/.vim/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets'
 "}}}
+
 "emmet-vim config {{{
 "<C-y>はneocompleteとkeymappingがconfrectするため<C-t>変更
 let g:user_emmet_leader_key='<C-t>'
 "}}}
+
 
