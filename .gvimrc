@@ -1,4 +1,5 @@
+" Specify the font you want to use with gvim.
 set guifont=Cica:h12:cANSI:qDRAFT
 
-set lines=60
-set columns=240
+" Boot up in fullscreen with gvim.
+au GUIEnter * simalt ~x

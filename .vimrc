@@ -130,7 +130,7 @@ end
 "Show invisible files
 let NERDTreeShowHidden = 1
 "Open & close
-nnoremap<silent><C-q> :NERDTreeToggle<CR>
+nnoremap<silent><C-f> :NERDTreeToggle<CR>
 "}}}
 
 "universal-ctags Settings {{{

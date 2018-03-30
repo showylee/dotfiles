@@ -60,3 +60,6 @@ repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+
+[[plugins]] #auto insetr close symbols
+repo = 'cohama/lexima.vim'
