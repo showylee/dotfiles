@@ -126,8 +126,10 @@ let g:sql_type_default = 'mysql'
 "Allways open NERDTree, to start vim
 "autocmd VimEnter * execute 'NERDTree'
 "To start vim without specifying a file, open NERDTree
-if argc() == 0
-    let g:nerdtree_tabs_open_on_console_startup = 1
+if(has('gvim'))
+    if argc() == 0
+        let g:nerdtree_tabs_open_on_console_startup = 1
+    end
 end
 "Show invisible files
 let NERDTreeShowHidden = 1
