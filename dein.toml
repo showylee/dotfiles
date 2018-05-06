@@ -63,3 +63,12 @@ repo = 'w0ng/vim-hybrid'
 
 [[plugins]] #auto insetr close symbols
 repo = 'cohama/lexima.vim'
+
+[[plugins]] #use gist on vim
+repo = 'lambdalisue/vim-gista'
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+
+[[plugins]] #grep tool
+repo = 'fuenor/qfixgrep'

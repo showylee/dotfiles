@@ -267,4 +267,15 @@ let g:neosnippet#snippets_directory = $HOME . '/.vim/dein/repos/github.com/Shoug
 let g:user_emmet_leader_key='<C-t>'
 "}}}
 
+"vim-gista config {{{
+let g:gista#client#default_username = 'ShouN-7'
+"}}}
 
+" memolist.vim config {{{
+let g:memolist_path = $HOME . "/Dropbox/memo"
+let g:memolist_memo_suffix = "md"
+
+map <Leader>mn :Memonew<CR>
+map <Leader>ml :MemoList<CR>
+map <Leader>mg :MemoGrep<CR>
+"}}}
