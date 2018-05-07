@@ -9,6 +9,10 @@ let g:vimproc#download_wimdows_dll = 1
 "    echo "bingo!"
 "endif 
 
+if $OSTYPE=='cygwin' || $TERM=='cygwin'
+    set shellpipe=
+endif
+
 " windows setting {{{
 if( has('win32') || has('win64') )
     "backup files directory (use only KaoriYa vim)
