@@ -5,6 +5,11 @@ set clipboard=unnamedplus
 
 let g:vimproc#download_wimdows_dll = 1
 
+"open vimrc & reload vim
+nnoremap <F5> :<C-u>vsplit $MYVIMRC<CR>
+nnoremap <F6> :<C-u>source $MYVIMRC<CR>
+                \ :source $MYGVIMRC<CR>
+
 "if(has('win32') || has('win64')) && has('gui') && &shell =~"bash"
 "    echo "bingo!"
 "endif 
