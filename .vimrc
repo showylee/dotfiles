@@ -1,5 +1,5 @@
-if has('gui_running')
+if has('win64')
 	source ~/AppData/Local/nvim/init.vim
-elseif
+else
 	source ~/.config/nvim/init.vim
 endif

@@ -6,9 +6,15 @@ set clipboard=unnamedplus
 let g:vimproc#download_wimdows_dll = 1
 
 "open vimrc & reload vim
-nnoremap <F5> :<C-u>vsplit $MYVIMRC<CR>
-nnoremap <F6> :<C-u>source $MYVIMRC<CR>
+nnoremap <F5> :<C-u>vsplit ~/dotfiles/init.vim<CR>
+nnoremap <F6> :<silent><C-u>source $MYVIMRC<CR>
                 \ :source $MYGVIMRC<CR>
+
+" Leader => Space
+let mapleader = "\<Space>"
+
+" open grep result with quickfix
+autocmd QuickFixCmdPost *grep* cwindow
 
 "if(has('win32') || has('win64')) && has('gui') && &shell =~"bash"
 "    echo "bingo!"
@@ -17,6 +23,33 @@ nnoremap <F6> :<C-u>source $MYVIMRC<CR>
 if $OSTYPE=='cygwin' || $TERM=='cygwin'
     set shellpipe=
 endif
+
+" markdown settings {{{
+if has("autocmd")
+    augroup MarkdownCmd
+        autocmd!
+        " Set extention to treat as markdown 
+        autocmd BufNewFile,BufRead *.{md,mdwn,mkdn,mark*} set filetype=markdown
+        " Invalidation Italic
+        autocmd FileType markdown hi! def link markdownItalic Normal
+    augroup END
+endif
+
+" Syntax highlight setting in code block
+let g:markdown_fenced_languages = [
+\   'erb=eruby',
+\   'javascript',
+\   'js=javascript',
+\   'json=javascript',
+\   'xml',
+\   'php',
+\   'ruby',
+\   'css',
+\   'java',
+\   'vim'
+\]
+
+"}}}
 
 " windows setting {{{
 if( has('win32') || has('win64') )
@@ -284,7 +317,14 @@ let g:gista#client#default_username = 'ShouN-7'
 let g:memolist_path = $HOME . "/Dropbox/memo"
 let g:memolist_memo_suffix = "md"
 
-map <Leader>mn :Memonew<CR>
+map <Leader>mn :MemoNew<CR>
 map <Leader>ml :MemoList<CR>
 map <Leader>mg :MemoGrep<CR>
+"}}}
+
+" qfixgrep setting {{{
+let s:qfix_dir = fnamemodify('~/.vim/qfixgrep',':p')
+if &runtimepath !~# '/qfixgrep'
+    execute 'set runtimepath^=' . s:qfix_dir
+endif
 "}}}
