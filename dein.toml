@@ -72,3 +72,9 @@ repo = 'glidenote/memolist.vim'
 
 [[plugins]] #grep tool
 repo = 'fuenor/qfixgrep'
+
+[[plugins]] #markdown
+repo = 'gabrielelana/vim-markdown'
+
+[[plugins]] # preview
+repo = 'greyblake/vim-preview'
