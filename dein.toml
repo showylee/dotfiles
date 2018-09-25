@@ -78,3 +78,6 @@ repo = 'gabrielelana/vim-markdown'
 
 [[plugins]] # preview
 repo = 'greyblake/vim-preview'
+
+[[plugins]] # indent php and html
+repo = 'captbaritone/better-indent-support-for-php-with-html'
