@@ -1,0 +1,118 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = '''(has('nvim') || has('timers')) && has('python3')'''
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+depends = ['deoplete.vim']
+if = '''has('timers') && has('python3')'''
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+depends = ['deoplete.vim']
+if = '''has('timers') && has('python3')'''
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = '''! (has('nvim') || has('timers')) && has('python3')''' 
+hook_add = 'source ~/dotfiles/nvim/plugin_settings/neocomplete.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]] #ctags list
+repo = 'vim-scripts/taglist.vim'
+hook_add = '''
+let Tlist_Use_Right_Window = 1
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1 
+map <silent><leader>t :TlistToggle<CR>
+'''
+
+[[plugins]] #asynchronous code check
+repo = 'w0rp/ale'
+
+[[plugins]] #html5 syntax
+repo = 'hail2u/vim-css3-syntax'
+
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+hook_add = '''
+let g:user_emmet_leader_key='<C-t>'
+'''
+[[plugins]]
+repo = 'othree/yajs.vim'
+
+[[plugins]] #file tree
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+let NERDTreeShowHidden = 1
+nnoremap<silent><C-f> :NERDTreeToggle<CR>
+'''
+hook_post_update = '''
+if(has('gvim'))
+    if argc() == 0
+        let g:nerdtree_tabs_open_on_console_startup = 1
+    end
+end
+'''
+
+[[plugins]] #git plugin
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+
+[[plugins]] #indent visualization
+repo = 'Yggdroot/indentLine'
+
+[[plugins]] #clorscheme
+repo = 'altercation/vim-colors-solarized'
+hook_add = '''
+  set background=dark
+  au MyAutoCmd VimEnter * nested colorscheme solarized
+'''
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]] #auto insetr close symbols
+repo = 'cohama/lexima.vim'
+hook_add = 'source ~/dotfiles/nvim/plugin_settings/lexima.vim'
+
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+hook_add = '''
+  let g:gista#client#default_username = 'ShouN-7'
+'''
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+hook_add = 'source ~/dotfiles/nvim/plugin_settings/memolist.vim'
+
+[[plugins]] #grep tool
+repo = 'fuenor/qfixgrep'
+hook_add = '''
+let s:qfix_dir = fnamemodify('~/.vim/qfixgrep',':p')
+if &runtimepath !~# '/qfixgrep'
+  execute 'set runtimepath^=' . s:qfix_dir
+endif
+'''
+
+[[plugins]] #markdown
+repo = 'gabrielelana/vim-markdown'
+
+[[plugins]] # preview
+repo = 'greyblake/vim-preview'
+
+[[plugins]] # indent php and html
+repo = 'captbaritone/better-indent-support-for-php-with-html'
