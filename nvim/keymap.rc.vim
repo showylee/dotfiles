@@ -6,3 +6,5 @@ nnoremap <F10> :<silent><C-u>source $MYVIMRC<CR>
 
 " Leader => Space
 let mapleader = "\<Space>"
+
+noremap * *N

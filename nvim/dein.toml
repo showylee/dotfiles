@@ -68,22 +68,36 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'elzr/vim-json'
+hook_add = '''
+let g:vim_json_syntax_conceal = 0
+'''
 
 [[plugins]] #indent visualization
 repo = 'Yggdroot/indentLine'
 
 [[plugins]] #clorscheme
 repo = 'altercation/vim-colors-solarized'
-hook_add = '''
-  set background=dark
-  au MyAutoCmd VimEnter * nested colorscheme solarized
-'''
 
 [[plugins]]
 repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+  set background=dark
+  au MyAutoCmd VimEnter * nested call SetHighlightOptions()
+  function SetHighlightOptions()
+    colorscheme iceberg
+    if has('mac')
+      highlight Normal ctermbg=NONE guibg=NONE
+      highlight NonText ctermbg=NONE guibg=NONE
+      highlight LineNr ctermbg=NONE guibg=NONE
+    endif
+  endfunction
+'''
 
 [[plugins]] #auto insetr close symbols
 repo = 'cohama/lexima.vim'
@@ -110,9 +124,15 @@ endif
 
 [[plugins]] #markdown
 repo = 'gabrielelana/vim-markdown'
+hook_add = '''
+let g:vim_markdown_conceal = 0
+'''
 
 [[plugins]] # preview
 repo = 'greyblake/vim-preview'
 
 [[plugins]] # indent php and html
 repo = 'captbaritone/better-indent-support-for-php-with-html'
+
+[[plugins]]
+repo = 'posva/vim-vue'
