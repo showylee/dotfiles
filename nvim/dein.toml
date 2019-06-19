@@ -1,24 +1,23 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = '''(has('nvim') || has('timers')) && has('python3')'''
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#if = '''(has('nvim') || has('timers')) && has('python3')'''
 
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-depends = ['deoplete.vim']
-if = '''has('timers') && has('python3')'''
+#[[plugins]]
+#repo = 'roxma/nvim-yarp'
+#depends = ['deoplete.vim']
+#if = '''has('timers') && has('python3')'''
 
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-depends = ['deoplete.vim']
-if = '''has('timers') && has('python3')'''
+#[[plugins]]
+#repo = 'roxma/vim-hug-neovim-rpc'
+#depends = ['deoplete.vim']
+#if = '''has('timers') && has('python3')'''
 
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-if = '''! (has('nvim') || has('timers')) && has('python3')''' 
-hook_add = 'source ~/dotfiles/nvim/plugin_settings/neocomplete.vim'
+#[[plugins]]
+#repo = 'Shougo/neocomplete.vim' if = '''! (has('nvim') || has('timers')) && has('python3')''' 
+#hook_add = 'source ~/dotfiles/nvim/plugin_settings/neocomplete.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -32,11 +31,11 @@ let Tlist_Exit_OnlyWindow = 1
 map <silent><leader>t :TlistToggle<CR>
 '''
 
-[[plugins]] #asynchronous code check
-repo = 'w0rp/ale'
+#[[plugins]] #asynchronous code check
+#repo = 'w0rp/ale'
 
-[[plugins]] #html5 syntax
-repo = 'hail2u/vim-css3-syntax'
+#[[plugins]] #html5 syntax
+#repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
 repo = 'gorodinskiy/vim-coloresque'
@@ -46,8 +45,8 @@ repo = 'mattn/emmet-vim'
 hook_add = '''
 let g:user_emmet_leader_key='<C-t>'
 '''
-[[plugins]]
-repo = 'othree/yajs.vim'
+#[[plugins]]
+#repo = 'othree/yajs.vim'
 
 [[plugins]] #file tree
 repo = 'scrooloose/nerdtree'
@@ -66,11 +65,11 @@ end
 [[plugins]] #git plugin
 repo = 'tpope/vim-fugitive'
 
-[[plugins]]
-repo = 'elzr/vim-json'
-hook_add = '''
-let g:vim_json_syntax_conceal = 0
-'''
+#[[plugins]]
+#repo = 'elzr/vim-json'
+#hook_add = '''
+#let g:vim_json_syntax_conceal = 0
+#'''
 
 [[plugins]] #indent visualization
 repo = 'Yggdroot/indentLine'
@@ -95,6 +94,8 @@ hook_add = '''
       highlight Normal ctermbg=NONE guibg=NONE
       highlight NonText ctermbg=NONE guibg=NONE
       highlight LineNr ctermbg=NONE guibg=NONE
+      highlight Folded ctermbg=NONE guibg=NONE
+      highlight EndOfBuffer ctermbg=NONE guibg=NONE
     endif
   endfunction
 '''
@@ -103,11 +104,11 @@ hook_add = '''
 repo = 'cohama/lexima.vim'
 hook_add = 'source ~/dotfiles/nvim/plugin_settings/lexima.vim'
 
-[[plugins]]
-repo = 'lambdalisue/vim-gista'
-hook_add = '''
-  let g:gista#client#default_username = 'ShouN-7'
-'''
+#[[plugins]]
+#repo = 'lambdalisue/vim-gista'
+#hook_add = '''
+#  let g:gista#client#default_username = 'ShouN-7'
+#'''
 
 [[plugins]]
 repo = 'glidenote/memolist.vim'
@@ -131,8 +132,13 @@ let g:vim_markdown_conceal = 0
 [[plugins]] # preview
 repo = 'greyblake/vim-preview'
 
-[[plugins]] # indent php and html
-repo = 'captbaritone/better-indent-support-for-php-with-html'
+#[[plugins]] # indent php and html
+#repo = 'captbaritone/better-indent-support-for-php-with-html'
+
+#[[plugins]]
+#repo = 'posva/vim-vue'
 
 [[plugins]]
-repo = 'posva/vim-vue'
+repo = 'neoclide/coc.nvim'
+build = './install.sh nightly'
+hook_add = 'source ~/dotfiles/nvim/plugin_settings/coc.nvim.vim'

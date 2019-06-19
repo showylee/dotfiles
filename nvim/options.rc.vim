@@ -28,7 +28,7 @@ set shiftwidth=0
 set expandtab
 
 set wildmenu
-set cursorline
+"set cursorline
 
 if has('persistent_undo')
   set undodir=~/.vim/undo
