@@ -10,6 +10,9 @@ elseif
   set clipboard=unnamed
 endif
 
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
+
 set iminsert=0
 set imsearch=0
 set hlsearch

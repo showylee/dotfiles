@@ -73,6 +73,9 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]] #indent visualization
 repo = 'Yggdroot/indentLine'
+hook_add = '''
+  let g:indentLine_setConceal = 0
+'''
 
 [[plugins]] #clorscheme
 repo = 'altercation/vim-colors-solarized'
@@ -142,3 +145,10 @@ repo = 'greyblake/vim-preview'
 repo = 'neoclide/coc.nvim'
 build = './install.sh nightly'
 hook_add = 'source ~/dotfiles/nvim/plugin_settings/coc.nvim.vim'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = '''
+  let g:go_def_mapping_enabled = 0
+  let g:go_doc_keywordprg_enabled = 0
+'''

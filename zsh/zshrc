@@ -1,6 +1,15 @@
 export TERM="xterm-256color"
+export PATH=$PATH:$HOME/Library/Python/3.7/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
+export PATH=$PATH:$HOME/bin
+export PAHT=$PATH:/usr/local/bin
+
+# ruby version management
+if rbenv -v; then
+  eval "$(rbenv init -)"
+fi
 
 PS1="%{$fg[cyan]%}[${USER}@${HOST%%.*} %1~]%(!.#.$)${reset_color}"
 
