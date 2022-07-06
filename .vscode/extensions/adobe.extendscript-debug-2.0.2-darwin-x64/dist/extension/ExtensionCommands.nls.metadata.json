@@ -1,0 +1,17 @@
+{
+	"messages": [
+		"Halt and Retry",
+		"Leave Alone",
+		"The target engine ({0}) is running another evaluation. Halt the existing evaluation and run this one?",
+		"Select an Attached Debug Session",
+		"Select an Eval Process to Halt"
+	],
+	"keys": [
+		"eval.in.host.busy.halt.and.retry",
+		"eval.in.host.busy.leave.alone",
+		"eval.in.host.busy.explanation",
+		"eval.in.attached.host.select.session",
+		"config.select.eval.process.with.picker"
+	],
+	"filePath": "extension/ExtensionCommands"
+}

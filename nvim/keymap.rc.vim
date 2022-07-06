@@ -1,3 +1,5 @@
+" derete hilignt
+nnoremap <F3> :noh<CR>
 " Open init.vim
 nnoremap <F9> :<C-u>vsplit ~/dotfiles/init.vim<CR>
 " Reload neovim

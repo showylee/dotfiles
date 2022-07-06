@@ -52,7 +52,7 @@ let g:user_emmet_leader_key='<C-t>'
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 let NERDTreeShowHidden = 1
-nnoremap<silent><C-f> :NERDTreeToggle<CR>
+nnoremap<silent><C-e> :NERDTreeToggle<CR>
 '''
 hook_post_update = '''
 if(has('gvim'))
@@ -74,7 +74,9 @@ repo = 'tpope/vim-fugitive'
 [[plugins]] #indent visualization
 repo = 'Yggdroot/indentLine'
 hook_add = '''
+  let g:indentLine_color_term = 239
   let g:indentLine_setConceal = 0
+  let g:indentLine_char = '|'
 '''
 
 [[plugins]] #clorscheme

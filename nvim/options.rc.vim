@@ -1,17 +1,19 @@
+set noswapfile
 set hidden
 set autoread
 set nobackup
 set nowrap
 set number
 set ruler
-if has('unix')
-  set clipboard=unnamedplus
-elseif
-  set clipboard=unnamed
+if has('win32') || has('win64') || has('mac')
+  set clipboard+=unnamed
+else
+  set clipboard+=unnamedplus
 endif
 
 set conceallevel=0
 let g:vim_json_syntax_conceal = 0
+autocmd FileType vue syntax sync fromstart
 
 set iminsert=0
 set imsearch=0
@@ -38,3 +40,5 @@ if has('persistent_undo')
   set undofile
 endif
 set undolevels=1000
+
+set backspace=indent,eol,start

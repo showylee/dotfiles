@@ -1,0 +1,11 @@
+{
+	"messages": [
+		"Paused on exception",
+		"Paused on breakpoint"
+	],
+	"keys": [
+		"session.break.reason.description.exception",
+		"session.break.reason.description.breakpoint"
+	],
+	"filePath": "extension/ESDDebugSession"
+}

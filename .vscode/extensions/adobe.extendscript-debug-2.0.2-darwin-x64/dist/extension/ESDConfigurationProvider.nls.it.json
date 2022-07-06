@@ -1,0 +1,8 @@
+[
+	"Debugs the active script in a host application.",
+	"Attaches to a host application. Does not immediately run a script.",
+	"Select Debugging Mode",
+	"La destinazione non è supportata",
+	"The Alias Path specified ({0}) does not exist. Please check your settings and try again.",
+	"A debug session for host application '{0}' is already active. Please stop the active session before trying again."
+]

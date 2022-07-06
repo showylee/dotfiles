@@ -1,0 +1,7 @@
+[
+	"Halt and Retry",
+	"Leave Alone",
+	"The target engine ({0}) is running another evaluation. Halt the existing evaluation and run this one?",
+	"Select an Attached Debug Session",
+	"Select an Eval Process to Halt"
+]

@@ -18,10 +18,18 @@ augroup vimrc-auto-mkdir " {{{
   endfunction "}}}
 augroup END "}}}
 
+" Removed a space at the end of a line when saving a file.
+autocmd BufWritePre * :%s/\s\+$//ge
+
+
+autocmd BufWritePre *.js, *.ts, *.vue, *.html, *.scss :call CocAction('format')
+command! -nargs=0 Format :call CocAction('format')
+
 if has('nvim')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
+" true colors option
 if (has("termguicolors"))
     set termguicolors
 endif 

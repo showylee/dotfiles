@@ -1,0 +1,12 @@
+[
+	"Die kompilierte Quelle wurde geschrieben in:\n {0}",
+	"Resources.tgz nicht gefunden",
+	"No host applications found. Please install a valid host application. If a host application is already installed, please try reinstalling it.",
+	"Select Host Application",
+	"The application specified by '{0}' is not installed. Please check the specifier and try again.",
+	"The application specified by '{0}' is not currently running. Please start the application and try again.",
+	"Failed to connect to the application specified by '{0}'. Please check that the application is running and responsive and try again.",
+	"Select ExtendScript Engine",
+	"Failed to connect to the host application '{0}'. The error indicates that the specified engine name '{1}' does not exist and could not be created.",
+	"Unknown error encountered while trying to connect to '{0}' with engine '{1}'. Message received: '{2}'."
+]

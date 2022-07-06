@@ -13,3 +13,5 @@ endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
